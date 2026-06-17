@@ -6,6 +6,9 @@
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>Iron Ventures Limited</title>
 <meta content="Iron Ventures Limited is a strategic co-investment platform. We are not a traditional venture capital fund and do not lead rounds; we deploy $2-10M tickets in co-investments, secondaries, and bridge financing across frontier technologies." name="description"/>
+<link rel="icon" type="image/x-icon" href="/favicon.ico"/>
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png"/>
+<link rel="apple-touch-icon" sizes="192x192" href="/favicon-192.png"/>
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&amp;family=Instrument+Sans:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
 <style>
@@ -555,6 +558,167 @@
   }
   .portfolio-label { font-size: 10px; letter-spacing: 2.5px; text-transform: uppercase; color: var(--text-muted); white-space: nowrap; }
   .portfolio-companies { display: flex; gap: 3rem; align-items: center; flex-wrap: wrap; }
+
+  /* HAMBURGER */
+  .nav-hamburger {
+    display: none; flex-direction: column; gap: 5px;
+    cursor: pointer; padding: 4px; background: none; border: none;
+  }
+  .nav-hamburger span {
+    display: block; width: 24px; height: 1.5px;
+    background: var(--smoke); transition: all 0.3s;
+  }
+  .nav-hamburger.open span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
+  .nav-hamburger.open span:nth-child(2) { opacity: 0; }
+  .nav-hamburger.open span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
+
+  /* MOBILE DRAWER */
+  .nav-mobile {
+    display: none;
+    position: fixed; top: 76px; left: 0; right: 0; z-index: 99;
+    background: rgba(28,28,30,0.98);
+    backdrop-filter: blur(16px);
+    border-bottom: 1px solid var(--border);
+    padding: 1.5rem 1.5rem 2rem;
+    flex-direction: column; gap: 0;
+  }
+  .nav-mobile.open { display: flex; }
+  .nav-mobile a {
+    display: block; padding: 14px 0;
+    color: var(--text-muted); text-decoration: none;
+    font-size: 13px; letter-spacing: 1.5px; text-transform: uppercase;
+    border-bottom: 1px solid var(--border-light);
+    transition: color 0.2s;
+  }
+  .nav-mobile a:hover { color: var(--gold); }
+  .nav-mobile-actions { display: flex; gap: 12px; margin-top: 1.5rem; }
+  .nav-mobile-actions .btn-primary, .nav-mobile-actions .btn-ghost { flex: 1; text-align: center; }
+
+  /* FOUNDING PARTNERS RESPONSIVE */
+  .founding-grid {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-bottom: 3rem;
+  }
+
+  /* MANDATE PANELS RESPONSIVE */
+  .mandate-panels {
+    display: flex; gap: 3rem;
+    border-top: 1px solid var(--border-light); padding-top: 4rem;
+    padding-bottom: 5rem; padding-left: 3rem; padding-right: 3rem;
+    max-width: 1200px; margin: 0 auto;
+  }
+  .mandate-panels > div { flex: 1; }
+
+  /* =====================
+     TABLET — 900px
+  ===================== */
+  @media (max-width: 900px) {
+    nav { padding: 0 1.5rem; }
+    .nav-links { display: none; }
+    .nav-hamburger { display: flex; }
+
+    .hero-content { padding: 4rem 1.5rem 10rem; }
+    .hero-stats {
+      bottom: 2rem; right: 1.5rem; left: 1.5rem;
+      gap: 1.5rem; justify-content: flex-start;
+    }
+    .hero-stat-num { font-size: 30px; }
+
+    .section { padding: 4rem 1.5rem; }
+    .section-wide { padding: 4rem 1.5rem; }
+
+    .about-body { grid-template-columns: 1fr; gap: 3rem; padding: 3rem 1.5rem; }
+    .about-hero { padding: 6rem 1.5rem 3rem; }
+
+    .focus-sectors { grid-template-columns: 1fr; padding: 3rem 1.5rem; gap: 1.5rem; }
+    .focus-header { padding: 6rem 1.5rem 3rem; }
+
+    .mandate-panels { flex-direction: column; gap: 1.5rem; padding-left: 1.5rem; padding-right: 1.5rem; }
+
+    .founding-grid { grid-template-columns: 1fr; }
+
+    .process-steps { grid-template-columns: 1fr 1fr; margin: 2rem 1.5rem 0; }
+    .process-step { border-right: 1px solid var(--border-light); }
+    .process-step:nth-child(2) { border-right: none; }
+    .process-step:nth-child(3) { border-right: 1px solid var(--border-light); border-top: 1px solid var(--border-light); }
+    .process-step:nth-child(4) { border-right: none; border-top: 1px solid var(--border-light); }
+
+    .contact-grid { grid-template-columns: 1fr; }
+    .contact-info { border-right: none; border-bottom: 1px solid var(--border-light); padding: 2.5rem; }
+    .contact-form { padding: 2.5rem; }
+
+    .footer-inner { grid-template-columns: 1fr 1fr; gap: 2.5rem; }
+    .footer-bottom { flex-direction: column; gap: 8px; text-align: center; }
+
+    .portfolio-bar { padding: 2rem 1.5rem; gap: 1.5rem; flex-wrap: wrap; }
+
+    .insights-grid { grid-template-columns: 1fr; }
+
+    .portal-tabs { padding: 2rem 1.5rem 0; overflow-x: auto; }
+    .portal-tab { padding: 12px 20px; white-space: nowrap; }
+    .portal-content { padding: 2.5rem 1.5rem; }
+    .portal-header { padding: 6rem 1.5rem 3rem; }
+  }
+
+  /* =====================
+     MOBILE — 600px
+  ===================== */
+  @media (max-width: 600px) {
+    nav { padding: 0 1rem; height: 64px; }
+    .page { padding-top: 64px; }
+    .nav-mobile { top: 64px; }
+    .logo-text { font-size: 13px; }
+
+    .hero-content { padding: 3rem 1rem 12rem; }
+    .hero-title { font-size: clamp(40px, 11vw, 60px); }
+    .hero-subtitle { font-size: 14px; }
+    .hero-actions { flex-direction: column; }
+    .hero-actions .btn-lg { width: 100%; text-align: center; }
+    .hero-stats {
+      bottom: 1.5rem; left: 1rem; right: 1rem;
+      gap: 1rem; flex-wrap: wrap;
+    }
+    .hero-divider { display: none; }
+    .hero-stat-num { font-size: 26px; }
+    .hero-stat-label { font-size: 9px; }
+
+    .section { padding: 3rem 1rem; }
+    .section-wide { padding: 3rem 1rem; }
+
+    .about-hero { padding: 5rem 1rem 2.5rem; }
+    .about-body { padding: 2.5rem 1rem; }
+    .about-hero-title { font-size: clamp(36px, 10vw, 56px); }
+
+    .focus-header { padding: 5rem 1rem 2.5rem; }
+    .focus-sectors { padding: 2.5rem 1rem; }
+
+    .founding-grid { gap: 1.5rem; }
+
+    .process-steps { grid-template-columns: 1fr; margin: 1.5rem 1rem 0; }
+    .process-step { border-right: none !important; border-top: 1px solid var(--border-light); }
+    .process-step:first-child { border-top: none; }
+
+    .cards-grid { grid-template-columns: 1fr; }
+
+    .contact-info { padding: 2rem 1rem; }
+    .contact-form { padding: 2rem 1rem; }
+
+    .footer-inner { grid-template-columns: 1fr; gap: 2rem; padding: 0 1rem; }
+    footer { padding: 3rem 1rem 1.5rem; }
+    .footer-bottom { padding: 1rem 1rem 0; }
+
+    .portfolio-bar { padding: 1.5rem 1rem; }
+    .portfolio-label { display: none; }
+
+    .mandate-panels { padding-left: 1rem; padding-right: 1rem; }
+
+    .portal-header { padding: 5rem 1rem 2.5rem; }
+    .portal-content { padding: 2rem 1rem; }
+    .portal-locked { padding: 3rem 1rem; }
+
+    .team-grid { grid-template-columns: 1fr; }
+
+    .section-lead { max-width: 100%; }
+  }
   .portfolio-co {
     font-family: 'Cormorant Garamond', serif;
     font-size: 16px; color: var(--iron-soft); font-weight: 400; letter-spacing: 1px;
@@ -570,6 +734,28 @@
   .sector-photo { height:180px; margin:-2rem -2rem 1.5rem; background-size:cover; background-position:center; border-bottom:1px solid var(--border-light); filter:saturate(.8) brightness(.78); }
   .sector-meta { font-size:10px; letter-spacing:2px; text-transform:uppercase; color:var(--gold); margin-bottom:.75rem; }
   .contact-note { border:1px solid var(--border-light); padding:2rem; margin-top:1.5rem; background:rgba(201,168,76,0.03); }
+
+  /* PITCHIQ STEP INDICATORS */
+  .pitchiq-step-indicator {
+    display:flex; align-items:center; gap:12px;
+    padding:14px 24px; border:1px solid var(--border-light);
+    opacity:0.4; transition:all 0.3s; cursor:default;
+  }
+  .pitchiq-step-indicator.active {
+    border-color:var(--gold); opacity:1;
+    background:rgba(201,168,76,0.05);
+  }
+  .pitchiq-step-num {
+    font-family:'Cormorant Garamond',serif;
+    font-size:22px; color:var(--gold); font-weight:300; line-height:1;
+  }
+  .pitchiq-step-label {
+    font-size:12px; letter-spacing:1.5px; text-transform:uppercase;
+    color:var(--smoke); font-weight:400;
+  }
+  .pitchiq-step-connector {
+    flex:1; height:1px; background:var(--border-light); max-width:80px;
+  }
   @media (max-width: 900px) { .home-mandate, .focus-sectors, .contact-grid { grid-template-columns:1fr !important; } .home-intro { padding-top:6rem; } }
 </style>
 </head>
@@ -582,11 +768,23 @@
       <span>Limited</span>
 </div>
 </a>
-<ul class="nav-links" id="navLinks"><li><a class="active" id="nav-home" onclick="showPage('home')">Home</a></li><li><a id="nav-team" onclick="showPage('team')">About</a></li></ul>
+<ul class="nav-links" id="navLinks"><li><a class="active" id="nav-home" onclick="showPage('home')">Home</a></li><li><a id="nav-founders" onclick="showPage('founders')">For Founders</a></li><li><a id="nav-team" onclick="showPage('team')">About</a></li></ul>
 <div class="nav-actions">
 <button class="btn-primary" onclick="showPage('contact')">Contact</button>
+<button class="nav-hamburger" id="hamburger" onclick="toggleMenu()" aria-label="Menu">
+  <span></span><span></span><span></span>
+</button>
 </div>
 </nav>
+<!-- MOBILE NAV -->
+<div class="nav-mobile" id="mobileNav">
+  <a onclick="showPage('home'); toggleMenu()">Home</a>
+  <a onclick="showPage('founders'); toggleMenu()">For Founders</a>
+  <a onclick="showPage('team'); toggleMenu()">About</a>
+  <div class="nav-mobile-actions">
+    <button class="btn-primary" onclick="showPage('contact'); toggleMenu()">Contact</button>
+  </div>
+</div>
 <!-- HOME -->
 <div class="page active" id="page-home">
 <div class="home-intro">
@@ -730,6 +928,122 @@
 </div>
 </div>
 </div>
+<!-- FOUNDERS — PitchIQ -->
+<div class="page" id="page-founders">
+
+  <!-- Hero -->
+  <div style="padding:8rem 3rem 0; max-width:1200px; margin:0 auto; border-bottom:1px solid var(--border-light); padding-bottom:4rem;">
+    <div class="section-eyebrow"><div class="section-eyebrow-line"></div><span>For Founders</span></div>
+    <div style="margin-top:1rem;">
+      <h1 class="about-hero-title" style="white-space:nowrap; font-size:clamp(24px, 3.8vw, 56px);">We move quickly. We don't do <em>exhaustive due diligence.</em></h1>
+    </div>
+  </div>
+
+  <!-- PitchIQ Main Block -->
+  <div style="max-width:1200px; margin:0 auto; padding:5rem 3rem; display:grid; grid-template-columns:1fr 1fr; gap:5rem; align-items:start;">
+
+    <!-- Left -->
+    <div>
+      <div style="font-size:10px; letter-spacing:3px; text-transform:uppercase; color:var(--gold); margin-bottom:1.5rem;">Proprietary Evaluation Model</div>
+      <h2 style="font-family:'Cormorant Garamond',serif; font-size:48px; font-weight:300; color:var(--smoke); line-height:1.05; margin-bottom:1.5rem;">Criton<br/><em>PitchIQ</em></h2>
+      <p style="font-size:14px; color:var(--text-muted); line-height:1.9; font-weight:300; margin-bottom:2.5rem;">PitchIQ is the first of Iron Ventures' proprietary models for evaluating deals. Built on institutional VC frameworks, it scores your pitch across five dimensions — surfacing strengths, red flags, and specific recommendations in minutes.</p>
+
+      <!-- Five dimensions -->
+      <div style="display:flex; flex-direction:column; gap:0; margin-bottom:3rem; border:1px solid var(--border-light);">
+        <div style="display:flex; align-items:center; gap:1.25rem; padding:1rem 1.5rem; border-bottom:1px solid var(--border-light);">
+          <div style="font-family:'Cormorant Garamond',serif; font-size:13px; color:var(--gold); width:20px; flex-shrink:0;">I</div>
+          <div style="font-size:13px; color:var(--smoke); flex:1;">Team</div>
+          <div style="font-size:12px; color:var(--text-muted); font-weight:300;">Founder-market fit · domain depth · track record</div>
+        </div>
+        <div style="display:flex; align-items:center; gap:1.25rem; padding:1rem 1.5rem; border-bottom:1px solid var(--border-light);">
+          <div style="font-family:'Cormorant Garamond',serif; font-size:13px; color:var(--gold); width:20px; flex-shrink:0;">II</div>
+          <div style="font-size:13px; color:var(--smoke); flex:1;">Market</div>
+          <div style="font-size:12px; color:var(--text-muted); font-weight:300;">Size · structure · timing · defensibility</div>
+        </div>
+        <div style="display:flex; align-items:center; gap:1.25rem; padding:1rem 1.5rem; border-bottom:1px solid var(--border-light);">
+          <div style="font-family:'Cormorant Garamond',serif; font-size:13px; color:var(--gold); width:20px; flex-shrink:0;">III</div>
+          <div style="font-size:13px; color:var(--smoke); flex:1;">Product</div>
+          <div style="font-size:12px; color:var(--text-muted); font-weight:300;">Technical differentiation · IP moat</div>
+        </div>
+        <div style="display:flex; align-items:center; gap:1.25rem; padding:1rem 1.5rem; border-bottom:1px solid var(--border-light);">
+          <div style="font-family:'Cormorant Garamond',serif; font-size:13px; color:var(--gold); width:20px; flex-shrink:0;">IV</div>
+          <div style="font-size:13px; color:var(--smoke); flex:1;">Traction</div>
+          <div style="font-size:12px; color:var(--text-muted); font-weight:300;">Revenue · pipeline · key milestones</div>
+        </div>
+        <div style="display:flex; align-items:center; gap:1.25rem; padding:1rem 1.5rem;">
+          <div style="font-family:'Cormorant Garamond',serif; font-size:13px; color:var(--gold); width:20px; flex-shrink:0;">V</div>
+          <div style="font-size:13px; color:var(--smoke); flex:1;">Business Model</div>
+          <div style="font-size:12px; color:var(--text-muted); font-weight:300;">Unit economics · capital efficiency</div>
+        </div>
+      </div>
+
+      <a href="https://criton.io" target="_blank" rel="noopener" class="btn-lg btn-lg-primary" style="text-decoration:none; display:inline-block;">Evaluate My Pitch →</a>
+      <p style="font-size:11px; color:var(--text-muted); margin-top:1rem; letter-spacing:0.5px;">Powered by Criton PitchIQ &nbsp;·&nbsp; Free to use &nbsp;·&nbsp; Results in minutes</p>
+    </div>
+
+    <!-- Right -->
+    <div style="display:flex; flex-direction:column; gap:2px;">
+
+      <!-- What happens after -->
+      <div style="background:var(--iron-mid); border:1px solid var(--border-light); padding:2.5rem;">
+        <div style="font-size:10px; letter-spacing:3px; text-transform:uppercase; color:var(--gold); margin-bottom:2rem;">After your evaluation</div>
+        <div style="display:flex; flex-direction:column; gap:2rem;">
+          <div style="display:flex; gap:1.5rem;">
+            <div style="width:1px; background:var(--border); flex-shrink:0; margin-top:6px;"></div>
+            <div>
+              <div style="font-family:'Cormorant Garamond',serif; font-size:18px; color:var(--smoke); margin-bottom:6px;">Receive your score</div>
+              <div style="font-size:13px; color:var(--text-muted); line-height:1.7; font-weight:300;">You'll get an institutional fundability score and specific feedback across all five dimensions — immediately, regardless of whether we proceed.</div>
+            </div>
+          </div>
+          <div style="display:flex; gap:1.5rem;">
+            <div style="width:1px; background:var(--border); flex-shrink:0; margin-top:6px;"></div>
+            <div>
+              <div style="font-family:'Cormorant Garamond',serif; font-size:18px; color:var(--smoke); margin-bottom:6px;">Submit to Iron Ventures</div>
+              <div style="font-size:13px; color:var(--text-muted); line-height:1.7; font-weight:300;">Include your PitchIQ score when you reach out. We review all deals that meet our threshold and respond within 5 business days.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Contact CTA -->
+      <div style="background:var(--iron-mid); border:1px solid var(--border-light); padding:2.5rem;">
+        <div style="font-size:10px; letter-spacing:3px; text-transform:uppercase; color:var(--gold); margin-bottom:1.25rem;">Already have your score?</div>
+        <p style="font-size:13px; color:var(--text-muted); line-height:1.7; font-weight:300; margin-bottom:1.75rem;">Send your PitchIQ score, deck, and a brief summary of the opportunity to both partners directly.</p>
+        <a href="mailto:umang@ironventures.ltd,arjit@ironventures.ltd?subject=Opportunity%20%E2%80%94%20PitchIQ%20Score%20Enclosed&body=PitchIQ%20Score%3A%20%5Byour%20score%5D%0A%0ACompany%3A%0ASector%3A%0ALead%20Investor%3A%0ATicket%20Sought%3A%20%24%5BXM%5D%0A%0ABrief%20Summary%3A%0A"
+           class="btn-lg btn-lg-outline" style="text-decoration:none; display:block; text-align:center; box-sizing:border-box;">Send Your Opportunity</a>
+        <div style="display:flex; gap:2rem; margin-top:1.5rem; padding-top:1.5rem; border-top:1px solid var(--border-light);">
+          <div>
+            <div style="font-size:10px; letter-spacing:1.5px; text-transform:uppercase; color:var(--text-muted); margin-bottom:4px;">Umang Gupta</div>
+            <a href="mailto:umang@ironventures.ltd" style="font-size:12px; color:var(--smoke); text-decoration:none;">umang@ironventures.ltd</a>
+          </div>
+          <div>
+            <div style="font-size:10px; letter-spacing:1.5px; text-transform:uppercase; color:var(--text-muted); margin-bottom:4px;">Arjit Gupta</div>
+            <a href="mailto:arjit@ironventures.ltd" style="font-size:12px; color:var(--smoke); text-decoration:none;">arjit@ironventures.ltd</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+<!-- FOUNDERS -->
+<div class="page" id="page-founders">
+<div style="padding:8rem 3rem 0; max-width:1200px; margin:0 auto;">
+  <div class="section-eyebrow"><div class="section-eyebrow-line"></div><span>For Founders</span></div>
+  <h1 class="about-hero-title">Know where you stand<br>before you <em>apply</em></h1>
+  <p class="section-lead" style="margin-top:1.5rem; max-width:640px;">We ask all founders to complete a PitchIQ evaluation before we review your opportunity. It takes under five minutes and gives you honest, institutional-grade feedback on your deck.</p>
+</div>
+
+<div style="max-width:1200px; margin:0 auto; padding:3rem 3rem 6rem;">
+  <div style="border:1px solid var(--border-light); padding:3rem; background:rgba(201,168,76,0.02); max-width:680px;">
+    <div style="font-size:10px; letter-spacing:3px; text-transform:uppercase; color:var(--gold); margin-bottom:1.5rem;">Our Proprietary Evaluation Model</div>
+    <h2 style="font-family:'Cormorant Garamond',serif; font-size:32px; font-weight:300; color:var(--smoke); line-height:1.2; margin-bottom:1.25rem;">Criton <em>PitchIQ</em></h2>
+    <p style="font-size:14px; color:var(--text-muted); line-height:1.8; font-weight:300; margin-bottom:2rem;">PitchIQ is the first of Iron Ventures' proprietary models for evaluating deals. It applies an institutional VC framework to your pitch — scoring across Team, Market, Product, Traction, and Business Model. Upload your deck and receive an objective score and actionable feedback in minutes. Include your score when you submit your opportunity to us.</p>
+    <a href="https://criton.io" target="_blank" class="btn-lg btn-lg-primary" style="text-decoration:none; display:inline-block;">Evaluate My Pitch →</a>
+    <p style="font-size:11px; color:var(--text-muted); margin-top:1rem;">First analysis is free · No credit card required · Results in under 5 minutes</p>
+  </div>
+</div>
+</div>
 <!-- CONTACT -->
 <div class="page" id="page-contact">
 <div style="padding:8rem 3rem 4rem; max-width:1200px; margin:0 auto;">
@@ -776,6 +1090,31 @@ function showPage(id) {
   document.querySelectorAll('.nav-links a').forEach(a => a.classList.remove('active'));
   const navItem = document.getElementById('nav-' + id);
   if (navItem) navItem.classList.add('active');
+  // Reset founders to step 1 whenever navigating away and back
+  if (id !== 'founders') { goToStep1(true); }
+}
+function goToStep2() {
+  document.getElementById('founders-step-1').style.display = 'none';
+  document.getElementById('founders-step-2').style.display = 'block';
+  document.getElementById('step-ind-1').classList.remove('active');
+  document.getElementById('step-ind-2').classList.add('active');
+  window.scrollTo(0, document.getElementById('page-founders').offsetTop);
+}
+function goToStep1(silent) {
+  const s1 = document.getElementById('founders-step-1');
+  const s2 = document.getElementById('founders-step-2');
+  const i1 = document.getElementById('step-ind-1');
+  const i2 = document.getElementById('step-ind-2');
+  if (s1) s1.style.display = 'block';
+  if (s2) s2.style.display = 'none';
+  if (i1) { i1.classList.add('active'); }
+  if (i2) { i2.classList.remove('active'); }
+}
+function toggleMenu() {
+  const nav = document.getElementById('mobileNav');
+  const btn = document.getElementById('hamburger');
+  nav.classList.toggle('open');
+  btn.classList.toggle('open');
 }
 </script>
 </body>
