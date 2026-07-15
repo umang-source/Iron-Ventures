@@ -1490,6 +1490,73 @@
     .am-geo-bar { gap: 1.5rem 1.75rem; padding: 1.5rem 1rem; }
   }
 
+/* ACTUATION / MANUFACTURING PAGE (scoped) */
+#page-manufacturing .am-mfg-hero-right { position: relative; height: calc(100vh - 72px); overflow: hidden; background: radial-gradient(circle at 50% 50%, rgba(0,212,255,0.05), transparent 70%); }
+#page-manufacturing .am-mfg-hero-right canvas { width: 100%; height: 100%; display: block; }
+#page-manufacturing .am-mfg-grid-overlay {
+  position: absolute; inset: 0; pointer-events: none;
+  background-image: linear-gradient(rgba(0,212,255,0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(0,212,255,0.05) 1px, transparent 1px);
+  background-size: 42px 42px;
+  mask-image: radial-gradient(circle at 50% 55%, black 0%, transparent 72%);
+  -webkit-mask-image: radial-gradient(circle at 50% 55%, black 0%, transparent 72%);
+}
+#page-manufacturing .am-mfg-hud-corner { position: absolute; width: 26px; height: 26px; border-color: var(--cyan); opacity: 0.55; pointer-events: none; }
+#page-manufacturing .am-mfg-hud-tl { top: 1.5rem; left: 1.5rem; border-top: 1px solid; border-left: 1px solid; }
+#page-manufacturing .am-mfg-hud-tr { top: 1.5rem; right: 1.5rem; border-top: 1px solid; border-right: 1px solid; }
+#page-manufacturing .am-mfg-hud-bl { bottom: 1.5rem; left: 1.5rem; border-bottom: 1px solid; border-left: 1px solid; }
+#page-manufacturing .am-mfg-hud-br { bottom: 1.5rem; right: 1.5rem; border-bottom: 1px solid; border-right: 1px solid; }
+#page-manufacturing .am-mfg-readout {
+  position: absolute; top: 1.75rem; left: 2.25rem;
+  font-family: 'Space Grotesk', sans-serif; font-size: 10px; letter-spacing: 2px; text-transform: uppercase;
+  color: var(--text-muted); line-height: 1.9;
+}
+#page-manufacturing .am-mfg-readout span { color: var(--cyan); }
+#page-manufacturing .am-mfg-intro-lead { max-width: 480px; margin: 0 0 2rem; }
+#page-manufacturing .am-mfg-hero-facts { display: flex; flex-direction: column; gap: 0; margin-top: 0.5rem; }
+#page-manufacturing .am-mfg-hero-fact { display: flex; gap: 1.25rem; padding: 1rem 0; border-top: 1px solid var(--border-light); }
+#page-manufacturing .am-mfg-hero-fact:last-child { border-bottom: 1px solid var(--border-light); }
+#page-manufacturing .am-mfg-hero-fact-label { flex: 0 0 110px; font-size: 10px; letter-spacing: 2px; text-transform: uppercase; color: var(--cyan); padding-top: 2px; }
+#page-manufacturing .am-mfg-hero-fact-value { font-size: 14px; color: var(--smoke); font-weight: 300; line-height: 1.6; }
+#page-manufacturing .am-mfg-body { padding: 5rem 3rem 6rem; max-width: 1200px; margin: 0 auto; }
+#page-manufacturing .am-mfg-caps-title {
+  font-family: 'Cormorant Garamond', serif; font-size: clamp(26px, 3vw, 34px); font-weight: 300;
+  color: var(--smoke); margin-bottom: 2.5rem;
+}
+#page-manufacturing .am-mfg-caps-title em { font-style: italic; color: var(--gold-light); }
+#page-manufacturing .am-mfg-caps-grid {
+  display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem; margin-bottom: 5rem;
+}
+#page-manufacturing .am-mfg-cap-card {
+  position: relative; border: 1px solid var(--border-light); padding: 2rem 1.5rem; overflow: hidden;
+  transition: border-color 0.25s, box-shadow 0.25s;
+}
+#page-manufacturing .am-mfg-cap-card:hover { border-color: var(--border); box-shadow: 0 0 20px var(--cyan-dim); }
+#page-manufacturing .am-mfg-cap-corner { position: absolute; width: 14px; height: 14px; border-color: var(--gold); opacity: 0; transition: opacity 0.25s; }
+#page-manufacturing .am-mfg-cap-card:hover .am-mfg-cap-corner { opacity: 0.8; }
+#page-manufacturing .am-mfg-cap-corner.tl { top: 0; left: 0; border-top: 1px solid; border-left: 1px solid; }
+#page-manufacturing .am-mfg-cap-corner.br { bottom: 0; right: 0; border-bottom: 1px solid; border-right: 1px solid; }
+#page-manufacturing .am-mfg-cap-num {
+  font-family: 'Cormorant Garamond', serif; font-size: 32px; color: var(--gold); opacity: 0.55; margin-bottom: 0.75rem;
+}
+#page-manufacturing .am-mfg-cap-name { font-size: 14px; letter-spacing: 0.5px; color: var(--smoke); margin-bottom: 0.6rem; }
+#page-manufacturing .am-mfg-cap-desc { font-size: 13px; color: var(--text-muted); line-height: 1.65; font-weight: 300; }
+#page-manufacturing .am-mfg-cta {
+  border: 1px solid var(--border); padding: 3rem; display: grid; grid-template-columns: 1.3fr 1fr; gap: 3rem; align-items: center;
+}
+#page-manufacturing .am-mfg-cta-title { font-family: 'Cormorant Garamond', serif; font-size: 24px; font-weight: 300; color: var(--smoke); margin-bottom: 0.75rem; }
+#page-manufacturing .am-mfg-cta-text { font-size: 14px; color: var(--text-muted); line-height: 1.7; font-weight: 300; }
+@media (max-width: 900px) {
+  #page-manufacturing .am-hero { grid-template-columns: 1fr; min-height: auto; }
+  #page-manufacturing .am-hero-left { padding: 3.5rem 1.75rem 2.5rem; }
+  #page-manufacturing .am-mfg-hero-right { height: 55vh; }
+  #page-manufacturing .am-mfg-caps-grid { grid-template-columns: repeat(2, 1fr); }
+  #page-manufacturing .am-mfg-cta { grid-template-columns: 1fr; }
+}
+@media (max-width: 560px) {
+  #page-manufacturing .am-mfg-caps-grid { grid-template-columns: 1fr; }
+  #page-manufacturing .am-mfg-hero-fact { flex-direction: column; gap: 0.25rem; }
+  #page-manufacturing .am-mfg-hero-fact-label { flex: none; }
+}
 </style>
 </head>
 <body>
@@ -1503,6 +1570,7 @@
 </a>
 <ul class="nav-links" id="navLinks"><li><a class="active" id="nav-home" onclick="showPage('home')">Home</a></li><li><a id="nav-founders" onclick="showPage('founders')">For Founders</a></li><li><a id="nav-team" onclick="showPage('team')">About</a></li></ul>
 <div class="nav-actions">
+<button class="btn-ghost" id="nav-manufacturing" onclick="showPage('manufacturing')">Advanced Manufacturing</button>
 <button class="btn-primary" onclick="showPage('contact')">Contact</button>
 <button class="nav-hamburger" id="hamburger" onclick="toggleMenu()" aria-label="Menu">
   <span></span><span></span><span></span>
@@ -1515,6 +1583,7 @@
   <a onclick="showPage('founders'); toggleMenu()">For Founders</a>
   <a onclick="showPage('team'); toggleMenu()">About</a>
   <div class="nav-mobile-actions">
+    <button class="btn-ghost" onclick="showPage('manufacturing'); toggleMenu()">Advanced Manufacturing</button>
     <button class="btn-primary" onclick="showPage('contact'); toggleMenu()">Contact</button>
   </div>
 </div>
@@ -1537,7 +1606,7 @@
       Capital for<br><em>frontier</em><br>technology
     </h1>
     <p class="hero-subtitle">
-      Strategic co-investment across quantum, AI infrastructure, photonics, and deep-tech healthcare. We deploy $2–10M tickets where there is a lead investor, clear technical differentiation, and cross-border potential.
+      Strategic co-investment across robotics, automation, semiconductor, defence, quantum, AI infrastructure, photonics, and deep-tech healthcare. We deploy $2–10M tickets where there is a lead investor, clear technical differentiation, and cross-border potential.
     </p>
     <div class="hero-actions">
       <button class="btn-lg btn-lg-primary" onclick="showPage('founders')">For Founders →</button>
@@ -1731,7 +1800,7 @@
 <div class="nav-logo" style="cursor:default;"><div class="logo-mark"><img alt="Iron Ventures compass logo" src="data:image/jpeg;base64,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"/></div><div class="logo-text">Iron Ventures<span>Limited</span></div></div>
 <p class="footer-brand-text">Strategic co-investment capital for frontier technology companies. We are not a VC fund and we do not lead rounds.</p>
 </div>
-<div><div class="footer-col-title">Company</div><ul class="footer-links"><li><a onclick="showPage('team')">About &amp; Team</a></li><li><a onclick="showPage('contact')">Contact</a></li></ul></div>
+<div><div class="footer-col-title">Company</div><ul class="footer-links"><li><a onclick="showPage('team')">About &amp; Team</a></li><li><a onclick="showPage('manufacturing')">Advanced Manufacturing</a></li><li><a onclick="showPage('contact')">Contact</a></li></ul></div>
 <div><div class="footer-col-title">Focus</div><ul class="footer-links"><li><a onclick="showPage('home')">Quantum</a></li><li><a onclick="showPage('home')">AI Infrastructure</a></li><li><a onclick="showPage('home')">Deeptech Healthcare</a></li><li><a onclick="showPage('home')">Photonics</a></li><li><a onclick="showPage('home')">Energy Transition</a></li><li><a onclick="showPage('home')">Space &amp; New Space</a></li><li><a onclick="showPage('home')">Defence &amp; Dual-Use</a></li><li><a onclick="showPage('home')">Advanced Materials</a></li><li><a onclick="showPage('home')">Robotics &amp; Autonomy</a></li></ul></div>
 <div><div class="footer-col-title">Legal</div><ul class="footer-links"><li><a href="#">Privacy Policy</a></li><li><a href="#">Terms of Use</a></li><li><a href="#">Disclosures</a></li></ul></div>
 </div>
@@ -2006,11 +2075,306 @@
 </div>
 </div>
 </div>
+<!-- ACTUATION SYSTEMS / MANUFACTURING -->
+<div class="page" id="page-manufacturing">
+
+<section class="am-hero">
+<div class="am-hero-left">
+<div class="section-eyebrow"><div class="section-eyebrow-line"></div><span>Advanced Manufacturing</span></div>
+<h1 class="am-headline">Precision <em>Actuation</em></h1>
+<p class="am-mfg-intro-lead contact-info-text">Iron Ventures is investing in a precision actuator assembly operation in Noida, sourcing components globally and assembling to order for robotics and industrial automation customers worldwide.</p>
+<div class="am-mfg-hero-facts">
+<div class="am-mfg-hero-fact">
+<div class="am-mfg-hero-fact-label">Facility</div>
+<div class="am-mfg-hero-fact-value">Noida, Uttar Pradesh, India</div>
+</div>
+<div class="am-mfg-hero-fact">
+<div class="am-mfg-hero-fact-label">Model</div>
+<div class="am-mfg-hero-fact-value">Global sourcing, in-India assembly</div>
+</div>
+<div class="am-mfg-hero-fact">
+<div class="am-mfg-hero-fact-label">Markets</div>
+<div class="am-mfg-hero-fact-value">Export-focused, global distribution</div>
+</div>
+<div class="am-mfg-hero-fact">
+<div class="am-mfg-hero-fact-label">Entity</div>
+<div class="am-mfg-hero-fact-value">Iron Ventures Limited</div>
+</div>
+</div>
+</div>
+
+<div class="am-mfg-hero-right">
+<canvas id="mfg-canvas"></canvas>
+<div class="am-mfg-grid-overlay"></div>
+<div class="am-mfg-hud-corner am-mfg-hud-tl"></div>
+<div class="am-mfg-hud-corner am-mfg-hud-tr"></div>
+<div class="am-mfg-hud-corner am-mfg-hud-bl"></div>
+<div class="am-mfg-hud-corner am-mfg-hud-br"></div>
+<div class="am-mfg-readout">Unit <span>ACT-01</span><br/>Cycle <span>Continuous</span></div>
+<div class="am-scene-label"><span class="am-scene-dot"></span>Live assembly — simulated</div>
+</div>
+</section>
+
+<div class="am-mfg-body">
+
+<div class="am-mfg-caps-title">Actuator <em>range</em></div>
+<div class="am-mfg-caps-grid">
+<div class="am-mfg-cap-card">
+<div class="am-mfg-cap-corner tl"></div><div class="am-mfg-cap-corner br"></div>
+<div class="am-mfg-cap-num">01</div>
+<div class="am-mfg-cap-name">Linear Actuators</div>
+<div class="am-mfg-cap-desc">Electric linear actuators for positioning, lifting, and industrial motion control applications.</div>
+</div>
+<div class="am-mfg-cap-card">
+<div class="am-mfg-cap-corner tl"></div><div class="am-mfg-cap-corner br"></div>
+<div class="am-mfg-cap-num">02</div>
+<div class="am-mfg-cap-name">Rotary Actuators</div>
+<div class="am-mfg-cap-desc">Rotary and geared actuators for automation systems requiring precise angular control.</div>
+</div>
+<div class="am-mfg-cap-card">
+<div class="am-mfg-cap-corner tl"></div><div class="am-mfg-cap-corner br"></div>
+<div class="am-mfg-cap-num">03</div>
+<div class="am-mfg-cap-name">Servo & Smart Actuators</div>
+<div class="am-mfg-cap-desc">Servo-driven and feedback-enabled actuators for closed-loop automation and control systems.</div>
+</div>
+<div class="am-mfg-cap-card">
+<div class="am-mfg-cap-corner tl"></div><div class="am-mfg-cap-corner br"></div>
+<div class="am-mfg-cap-num">04</div>
+<div class="am-mfg-cap-name">Robotic Joint Actuators</div>
+<div class="am-mfg-cap-desc">Compact, high-torque-density actuators for robotic arms, joints, and autonomous platforms.</div>
+</div>
+</div>
+
+<div class="am-mfg-cta">
+<div>
+<div class="am-mfg-cta-title">Supplier &amp; component enquiries</div>
+<div class="am-mfg-cta-text">We are actively sourcing components and building supplier relationships for our assembly line. If you supply motors, gearboxes, encoders, bearings, controllers, or related components, we would welcome a conversation.</div>
+</div>
+<a href="mailto:enquiry@ironventures.ltd?subject=Supplier%20Enquiry%20%E2%80%94%20Advanced%20Manufacturing" class="btn-lg btn-lg-primary" style="text-decoration:none; display:inline-block; text-align:center; justify-self:start;">Contact Us — enquiry@ironventures.ltd</a>
+</div>
+
+</div>
+</div>
 <!-- LOGIN -->
 
 <!-- REGISTER -->
 
 <!-- FORGOT PASSWORD -->
+
+<script>
+// ── THREE.JS ROBOTIC ARM — ADVANCED MANUFACTURING PAGE ─────────
+(function() {
+  var canvas, scene, camera, renderer, initialized = false;
+  var root, joint1, joint2, joint3, gripL, gripR, headGlow;
+  var ringDots = [];
+
+  function initMfgScene() {
+    if (initialized) return;
+    canvas = document.getElementById('mfg-canvas');
+    if (!canvas || typeof THREE === 'undefined') return;
+    initialized = true;
+
+    scene = new THREE.Scene();
+    camera = new THREE.PerspectiveCamera(45, 1, 0.1, 100);
+    camera.position.set(2.6, 2.0, 4.4);
+    camera.lookAt(0, 0.6, 0);
+
+    renderer = new THREE.WebGLRenderer({ canvas: canvas, antialias: true, alpha: true });
+    renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+    renderer.setClearColor(0x000000, 0);
+
+    function resizeMfg() {
+      var rect = canvas.parentElement.getBoundingClientRect();
+      if (!rect.width || !rect.height) return;
+      renderer.setSize(rect.width, rect.height);
+      camera.aspect = rect.width / rect.height;
+      camera.updateProjectionMatrix();
+    }
+    resizeMfg();
+    window.addEventListener('resize', resizeMfg);
+    window.addEventListener('mfg-resize', resizeMfg);
+
+    // Lights
+    scene.add(new THREE.AmbientLight(0x101025, 1.1));
+    var cyanLight = new THREE.PointLight(0x00D4FF, 1.3, 12);
+    cyanLight.position.set(2, 3, 2);
+    scene.add(cyanLight);
+    var goldLight = new THREE.PointLight(0xC9A84C, 0.9, 12);
+    goldLight.position.set(-2.5, 1.5, -1.5);
+    scene.add(goldLight);
+
+    // Materials
+    var metalDark = new THREE.MeshPhongMaterial({ color: 0x11111f, emissive: 0x030308, shininess: 90, specular: 0x00D4FF });
+    var metalGold = new THREE.MeshPhongMaterial({ color: 0x2a2412, emissive: 0x1a1408, shininess: 70, specular: 0xC9A84C });
+    var cyanEdgeMat = new THREE.LineBasicMaterial({ color: 0x00D4FF, transparent: true, opacity: 0.55 });
+    var goldEdgeMat = new THREE.LineBasicMaterial({ color: 0xC9A84C, transparent: true, opacity: 0.5 });
+
+    function addEdges(mesh, mat) {
+      var edges = new THREE.EdgesGeometry(mesh.geometry);
+      var lines = new THREE.LineSegments(edges, mat);
+      mesh.add(lines);
+    }
+
+    // ── Floor ring grid ──
+    var floorGroup = new THREE.Group();
+    for (var r = 1; r <= 3; r++) {
+      var ringGeo = new THREE.RingGeometry(r * 0.62, r * 0.62 + 0.006, 64);
+      var ringMat = new THREE.MeshBasicMaterial({ color: 0x00D4FF, transparent: true, opacity: 0.10, side: THREE.DoubleSide });
+      var ringMesh = new THREE.Mesh(ringGeo, ringMat);
+      ringMesh.rotation.x = -Math.PI / 2;
+      floorGroup.add(ringMesh);
+    }
+    floorGroup.position.y = -0.02;
+    scene.add(floorGroup);
+
+    // ── Orbiting component dots (assembly-line feel) ──
+    var dotGeo = new THREE.SphereGeometry(0.045, 12, 12);
+    var dotMatCyan = new THREE.MeshBasicMaterial({ color: 0x00D4FF, transparent: true, opacity: 0.85 });
+    var dotMatGold = new THREE.MeshBasicMaterial({ color: 0xC9A84C, transparent: true, opacity: 0.85 });
+    var N = 10;
+    for (var i = 0; i < N; i++) {
+      var dot = new THREE.Mesh(dotGeo, i % 3 === 0 ? dotMatGold : dotMatCyan);
+      var ang = (i / N) * Math.PI * 2;
+      var rad = 1.95;
+      dot.position.set(Math.cos(ang) * rad, 0.05, Math.sin(ang) * rad);
+      scene.add(dot);
+      ringDots.push({ mesh: dot, ang: ang, rad: rad, speed: 0.35 + (i % 3) * 0.08 });
+    }
+
+    // ── Robotic arm ──
+    root = new THREE.Group();
+    scene.add(root);
+
+    // Base plinth
+    var baseGeo = new THREE.CylinderGeometry(0.62, 0.7, 0.28, 24);
+    var base = new THREE.Mesh(baseGeo, metalDark);
+    base.position.y = 0.14;
+    addEdges(base, cyanEdgeMat);
+    root.add(base);
+
+    var hubGeo = new THREE.CylinderGeometry(0.32, 0.34, 0.22, 20);
+    var hub = new THREE.Mesh(hubGeo, metalGold);
+    hub.position.y = 0.34;
+    addEdges(hub, goldEdgeMat);
+    root.add(hub);
+
+    // Joint 1 (shoulder) — swings the whole upper assembly side to side
+    joint1 = new THREE.Group();
+    joint1.position.y = 0.45;
+    root.add(joint1);
+
+    var j1Geo = new THREE.SphereGeometry(0.19, 18, 18);
+    var j1 = new THREE.Mesh(j1Geo, metalDark);
+    addEdges(j1, cyanEdgeMat);
+    joint1.add(j1);
+
+    var upperLen = 1.15;
+    var upperGeo = new THREE.CylinderGeometry(0.1, 0.13, upperLen, 16);
+    var upperArm = new THREE.Mesh(upperGeo, metalGold);
+    upperArm.position.y = upperLen / 2;
+    addEdges(upperArm, goldEdgeMat);
+    joint1.add(upperArm);
+
+    // Joint 2 (elbow)
+    joint2 = new THREE.Group();
+    joint2.position.y = upperLen;
+    joint1.add(joint2);
+
+    var j2Geo = new THREE.SphereGeometry(0.145, 16, 16);
+    var j2 = new THREE.Mesh(j2Geo, metalDark);
+    addEdges(j2, cyanEdgeMat);
+    joint2.add(j2);
+
+    var foreLen = 0.9;
+    var foreGeo = new THREE.CylinderGeometry(0.075, 0.1, foreLen, 16);
+    var foreArm = new THREE.Mesh(foreGeo, metalDark);
+    foreArm.position.y = foreLen / 2;
+    addEdges(foreArm, cyanEdgeMat);
+    joint2.add(foreArm);
+
+    // Joint 3 (wrist)
+    joint3 = new THREE.Group();
+    joint3.position.y = foreLen;
+    joint2.add(joint3);
+
+    var j3Geo = new THREE.SphereGeometry(0.1, 14, 14);
+    var j3 = new THREE.Mesh(j3Geo, metalGold);
+    addEdges(j3, goldEdgeMat);
+    joint3.add(j3);
+
+    // End effector — glowing actuator head + gripper fingers
+    var headGeo = new THREE.OctahedronGeometry(0.11, 0);
+    var headMat = new THREE.MeshPhongMaterial({ color: 0x00222e, emissive: 0x00D4FF, emissiveIntensity: 0.6, shininess: 100, specular: 0x00D4FF });
+    headGlow = new THREE.Mesh(headGeo, headMat);
+    headGlow.position.y = 0.16;
+    joint3.add(headGlow);
+
+    var fingerGeo = new THREE.BoxGeometry(0.035, 0.22, 0.06);
+    gripL = new THREE.Mesh(fingerGeo, metalDark);
+    gripR = new THREE.Mesh(fingerGeo, metalDark);
+    gripL.position.set(-0.08, 0.28, 0);
+    gripR.position.set(0.08, 0.28, 0);
+    addEdges(gripL, cyanEdgeMat);
+    addEdges(gripR, cyanEdgeMat);
+    joint3.add(gripL);
+    joint3.add(gripR);
+
+    // Initial load if page already active
+    if (document.getElementById('page-manufacturing').classList.contains('active')) {
+      window.dispatchEvent(new Event('mfg-resize'));
+    }
+
+    var lastT = 0;
+    function animateMfg(t) {
+      requestAnimationFrame(animateMfg);
+      var dt = t - lastT; lastT = t;
+      if (!dt || dt > 200) dt = 16;
+      var time = t * 0.001;
+
+      root.rotation.y = Math.sin(time * 0.18) * 0.55 + time * 0.06;
+      joint1.rotation.z = Math.sin(time * 0.55) * 0.28 - 0.1;
+      joint2.rotation.z = Math.sin(time * 0.7 + 1.1) * 0.4 - 0.35;
+      joint3.rotation.z = Math.sin(time * 0.9 + 2.0) * 0.3;
+
+      var gripOpen = (Math.sin(time * 0.9 + 2.0) * 0.5 + 0.5) * 0.05 + 0.04;
+      gripL.position.x = -0.08 - gripOpen;
+      gripR.position.x = 0.08 + gripOpen;
+
+      headGlow.material.emissiveIntensity = 0.45 + Math.sin(time * 2.4) * 0.25;
+      headGlow.rotation.y += 0.02;
+
+      for (var i = 0; i < ringDots.length; i++) {
+        var d = ringDots[i];
+        d.ang += d.speed * dt * 0.001;
+        d.mesh.position.x = Math.cos(d.ang) * d.rad;
+        d.mesh.position.z = Math.sin(d.ang) * d.rad;
+        d.mesh.position.y = 0.05 + Math.sin(d.ang * 3 + i) * 0.03;
+      }
+
+      floorGroup.rotation.y += 0.0006 * dt;
+
+      renderer.render(scene, camera);
+    }
+    requestAnimationFrame(animateMfg);
+  }
+
+  function activateMfgPage() {
+    initMfgScene();
+    window.dispatchEvent(new Event('mfg-resize'));
+  }
+
+  if (document.getElementById('page-manufacturing') && document.getElementById('page-manufacturing').classList.contains('active')) {
+    activateMfgPage();
+  }
+
+  document.addEventListener('click', function(e) {
+    var oc = e.target.getAttribute && e.target.getAttribute('onclick') || '';
+    if (oc.indexOf("'manufacturing'") !== -1 || oc.indexOf('"manufacturing"') !== -1) {
+      setTimeout(activateMfgPage, 60);
+    }
+  });
+})();
+</script>
 
 <script>
 // ── TERMINAL CARD ENTRANCE ─────────────────────────────────────
